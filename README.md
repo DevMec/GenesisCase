@@ -16,4 +16,7 @@ Pour l’instant, j’utilise swagger pour pouvoir interroger mes services (j’
 6- Ne pas oublié de changer la ConnectionString en fonction de vos paramètre.
 J'ai ajouté un fichier Data/GenesisCase.mdf dans le projet Repository.
 
+7- Il y a deux fichiers postman (environment et testCollection).
+pour les tests collections executer le save puis GetAll pour recuperer les l'id generé, pour mettre a jour les variables.
+
 Bien à vous,
