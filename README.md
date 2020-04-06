@@ -13,5 +13,7 @@ Pour l’instant, j’utilise swagger pour pouvoir interroger mes services (j’
 
 5-	J’ai ajouté un projet de tests pour les Contraintes business (Pas vraiment nécessaire car les besoin business sont simplistes)
 
+6- Ne pas oublié de changer la ConnectionString en fonction de vos paramètre.
+J'ai ajouté un fichier Data/GenesisCase.mdf dans le projet Repository.
+
 Bien à vous,
-Habib
