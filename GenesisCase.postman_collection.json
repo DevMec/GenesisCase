@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "f90088df-aae5-4284-939e-39a1b36e33bd",
+		"name": "GenesisCase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ContactSave",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"CompanyList\": [ ],\r\n\"IsFreelancer\": false,\r\n\"VAT\": \"\",\r\n\"Id\": null,\r\n\"Name\": \"Employee 001\",\r\n\"Address\": \"Address Employee 001\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5281/Contact/Save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Contact",
+						"Save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ContactGetAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5281/Contact/GetAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Contact",
+						"GetAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ContactGetById",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4739c686-bd80-4ba7-aa6f-9df061ba999c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5281/Contact/GetById?id={{contactId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Contact",
+						"GetById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{contactId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompanySave",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"SateliteAddressList\": [\r\n    \"Genesis Adresse 2\"\r\n  ],\r\n  \"VAT\": \"string\",\r\n  \"ContactList\": [],\r\n  \"Id\": null,\r\n  \"Name\": \"Genesis\",\r\n  \"Address\": \"Genesis Main Address\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5281/Company/Save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Company",
+						"Save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompanyGetAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5281/Company/GetAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Company",
+						"GetAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompanyGetById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5281/Company/GetById?id={{companyId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Company",
+						"GetById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{companyId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompanyAddContact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5281/Company/AddContact?contactId={{contactId}}&companyId={{companyId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Company",
+						"AddContact"
+					],
+					"query": [
+						{
+							"key": "contactId",
+							"value": "{{contactId}}"
+						},
+						{
+							"key": "companyId",
+							"value": "{{companyId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompanyRemoveContact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5281/Company/RemoveContact?contactId={{contactId}}&companyId={{companyId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Company",
+						"RemoveContact"
+					],
+					"query": [
+						{
+							"key": "contactId",
+							"value": "{{contactId}}"
+						},
+						{
+							"key": "companyId",
+							"value": "{{companyId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ContactAddCompany",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5281/Contact/AddCompany?contactId={{contactId}}&companyId={{companyId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Contact",
+						"AddCompany"
+					],
+					"query": [
+						{
+							"key": "contactId",
+							"value": "{{contactId}}"
+						},
+						{
+							"key": "companyId",
+							"value": "{{companyId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ContactRemoveCompany",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5281/Contact/RemoveCompany?contactId={{contactId}}&companyId={{companyId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Contact",
+						"RemoveCompany"
+					],
+					"query": [
+						{
+							"key": "contactId",
+							"value": "{{contactId}}"
+						},
+						{
+							"key": "companyId",
+							"value": "{{companyId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteContact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5281/Contact/Delete?id={{contactId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Contact",
+						"Delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{contactId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCompany",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5281/Company/Delete?id={{companyId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5281",
+					"path": [
+						"Company",
+						"Delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{companyId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
